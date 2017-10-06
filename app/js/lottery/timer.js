@@ -1,10 +1,10 @@
 // timer.js  定时器模块 
 
 class Timer{
-	countDown(end, uodate, handle){
+	countdown(end, uodate, handle){
 		const now = new Date().getTime(); // 获取当前时间
 		const self = this;                // 获取当前对象的指针
-		if(now - end){                    // 如果当前时间大于截止时间,则倒计时结束
+		if(now - end > 0){                // 如果当前时间大于截止时间,则倒计时结束
 			handle.call(self);
 		}else{                            // 倒计时没有结束，计算当前时间到截止时间的剩余时间
 			let last_time = end - now;
@@ -29,10 +29,10 @@ class Timer{
 			if(r.length || (s>0)){
 				r.push(`<em>${s}</em>秒`);
 			}
-			self.last_time = r.join('');// 将值保存
-			update.call(self, r.join('')); // 每秒钟轮询
-			setTimeout(function(){ // 不断的更新
-				self.countDown(end, update, handle);
+			self.last_time = r.join('');	// 将值保存
+			update.call(self, r.join(''));  // 每秒钟轮询
+			setTimeout(function(){ 			// 不断的更新
+				self.countdown(end, update, handle);
 			},1000);
 		}
 	}

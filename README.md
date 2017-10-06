@@ -1,6 +1,6 @@
 ## Lottery-Analysis 彩票分析项目
 
-#### 1、快频彩种 （11选5） 
+#### 1、快频彩种 （11选5） http://es6lottery.t.imooc.io/#
 
 ![彩票](http://img.blog.csdn.net/20171005151146651)
 
